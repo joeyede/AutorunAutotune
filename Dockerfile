@@ -1,3 +1,4 @@
+FROM node
 
 
 RUN apt-get update
@@ -64,14 +65,14 @@ RUN pip3 install requests texttable
 ## Get script that downloads profiles from Nightscout 
 ## Credit 
 RUN curl -s https://raw.githubusercontent.com/viq/oref0/profile_from_nightscout/bin/get_profile.py > get_profile.py
-
+RUN curl -s https://raw.githubusercontent.com/joeyede/AutorunAutotune/master/profile_trigger.py > profile_trigger.py
 #build script to run
 
 RUN echo '#!/bin/bash' > autotune-scrip.sh && \
     echo 'python3 get_profile.py --nightscout $SITE_URL  write --directory ~/myopenaps/settings/' >> autotune-scrip.sh && \
     echo 'oref0-autotune --dir=~/myopenaps --ns-host=$SITE_URL  --start-days-ago=$DAYS --categorize-uam-as-basal=true' >>  autotune-scrip.sh && \
     echo 'oref0-upload-profile ~/myopenaps/autotune/profile.json $SITE_URL $API_SECRET' >>  autotune-scrip.sh  && \
-    echo 'python3 profile_trigger.py --site=$SITE_URL --api_key=$API_SECRET'
+    echo 'python3 profile_trigger.py --site=$SITE_URL --api_key=$API_SECRET' >>  autotune-scrip.sh
 RUN chmod +x autotune-scrip.sh
 
 #RUN python3 get_profile.py --nightscout $SITE_URL  write --directory ~/myopenaps/settings/
@@ -80,6 +81,6 @@ RUN chmod +x autotune-scrip.sh
 
 #Copy in the files:profile.json, pumpprofile.json and autotune.json
 
-#RUN cat autotune-scrip.sh
+RUN cat autotune-scrip.sh
 #RUN ./autotune-scrip.sh
 Cmd ["./autotune-scrip.sh"]
