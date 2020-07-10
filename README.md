@@ -5,7 +5,11 @@ This is a Dockerfile + instructions to make it easier to run Open APS Autotune a
 By following these instructions you are using components provided by Open APS as a reference implementation.  Nobody can
 guaranty this will do what you expect it to.  You will need to edit files and know things about your configuration to
 make it work.
-Also note by default this scripts pull the Beta branch of Open APS Autotune.    
+
+Also:
+ - By default this scripts pull the Beta branch of Open APS Autotune. 
+ - This has not been tested outside UK and may or may not work in other timezones.  
+ - You should pause this while traveling as I have no idea what will happen when crossing time zones.   
 
 ## Background:
 This is designed to emulate the way Open APS runs Autotune nightly, allowing users of AndroidAPS to benefit from it. 
