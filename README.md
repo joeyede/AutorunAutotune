@@ -13,9 +13,10 @@ Also:
 
 ## Background:
 This is designed to emulate the way Open APS runs Autotune nightly, allowing users of AndroidAPS to benefit from it. 
-My understanding is Open APS uses the pump profile as its basline and then runs autotune against that, which it then
-uses without modifying the base profile.  AutorunAutotune emulates this by using two Nightscout profiles:
-- baseline - This is your trusted base profile which will be downloaded from nightscourt and autotune will run against.
+Open APS uses the pump profile as its basline and will not allow more the 20% deviation from it. It also pulls the latest
+profile and then runs autotune against that.  AutorunAutotune uses a simplifed version of this by using two Nightscout profiles:
+- baseline - This is your trusted base profile which will be downloaded from nightscourt and autotune will run against. 
+It is used for both the "pump profile" and current profile.
 - OpenAPS Autosync - This is the output profile which will be uploaded and **overwritten** if it already exists. 
 The udpated "OpenAPS Autosync" profile will then be triggered activating it in AndroidAPS    
 
