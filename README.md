@@ -46,10 +46,10 @@ When you do please follow the above procedure.
 
 e.g. on Linux:
 ```shell script
-mkdir testAutorunAuto
-cd testAutorunAutot/
-git clone https://github.com/joeyede/AutorunAutotune.git
-cd AutorunAutotune/
+$ mkdir testAutorunAuto
+$ cd testAutorunAutot/
+$ git clone https://github.com/joeyede/AutorunAutotune.git
+$ cd AutorunAutotune/
 ````
 You will now need to **modify** the Dockerfile.
 
@@ -69,8 +69,8 @@ ENV TZ Europe/London
 Finally build the docker file and then run the new image:
 
 ```shell script
-docker build . -t autot
-docker run autot
+$ docker build . -t autot
+$ docker run autot
 ```
 
 If everything works you should have a new profile "OpenAPS Autosync" activated.
@@ -119,7 +119,7 @@ Got response  is:[{"eventType":"Profile Switch","notes":"Applying autotune from 
 The short version:
 Use your automatoin tool of choice to run the command:
 ```shell script
-docker run autot
+$ docker run autot
 ```
 at a time of your choice (I use 2am)
 
