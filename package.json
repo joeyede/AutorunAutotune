@@ -1,0 +1,14 @@
+{
+  "name": "cloudrun-autot",
+  "version": "1.0.0",
+  "description": "Executor for Autotune docker script",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Joey Edelstein",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
