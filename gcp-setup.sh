@@ -39,6 +39,7 @@ gcloud run services add-iam-policy-binding autot \
    --role=roles/run.invoker --platform managed --region us-east4
 
 #setup schedule for 2:05 am using service acount to invoke the cloud run instance. 
+gcloud app create --region=us-east4
 gcloud beta scheduler jobs create http autot-schedual --schedule "05 2 * * *" \
    --http-method=get \
    --uri=${SERVICE_URL}/exec \
