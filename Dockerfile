@@ -72,7 +72,7 @@ RUN chmod +x autotune-scrip.sh
 
 
 # To run from docker directly use:
-#CMD ["./autotune-scrip.sh"]
+CMD ["./autotune-scrip.sh"]
 
 # Run the web service on container startup.
-CMD [ "npm", "start" ]
+#CMD [ "npm", "start" ]
