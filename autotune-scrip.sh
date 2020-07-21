@@ -31,7 +31,7 @@ else
 fi
 
 echo "triggering updated profile"
-#python3 profile_trigger.py --site=$SITE_URL --api_key=$API_SECRET
+python3 profile_trigger.py --site=$SITE_URL --api_key=$API_SECRET
 if [ $? -eq 0 ]
 then
   echo "trigger successfull"

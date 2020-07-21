@@ -33,9 +33,9 @@ RUN mkdir ./src
 RUN cd ./src && git clone -b dev git://github.com/openaps/oref0.git || (echo doing checkout && cd oref0 && git checkout dev && git pull)
 RUN cd ./src/oref0 && npm run global-install
 
-
-# Personal stuff:
-ENV API_SECRET missing
+RUN echo "ERROR - You need to remove this line and edit the next lines with your personal API Secret and site URL" ; exit 1
+# Personal stuff: replace with correct values
+ENV API_SECRET missing 
 ENV SITE_URL https://mysite.herokuapp.com
 # Set Your Time zone
 ENV TZ Europe/London  
