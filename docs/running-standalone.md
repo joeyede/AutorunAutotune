@@ -1,4 +1,4 @@
-#Running Standalone 
+# Running Standalone
 
 ## Prerequisites
 - You will need to know you nightscout URL and API secret. 
@@ -20,7 +20,8 @@ $ git clone https://github.com/joeyede/AutorunAutotune.git
 $ cd AutorunAutotune/
 ````
 
-####Update docker file 
+##### Update docker file
+
 You will now need to **modify** the Dockerfile.
 
  - Open the file called "Dockerfile" in a text editor and find the section labeled "#Personal stuff"

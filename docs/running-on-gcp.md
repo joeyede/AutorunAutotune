@@ -14,7 +14,7 @@ $ git clone https://github.com/joeyede/AutorunAutotune.git
 $ cd AutorunAutotune
 
 ```
-Now edit the Dockerfile as described in [Run Standalone](running-standalone.md)
+Now edit the Dockerfile as described in [Run Standalone](docs/running-standalone.md)
 Additionally you need to edit last lines of Dockerfile.  Uncomment the last CMD and comment out the CMD before that.
 should now look like this:
 ```dockerfile
@@ -37,7 +37,7 @@ You can see the scheduler in the [Cloud Scheduler section](https://console.cloud
 the GCP console.  Here you can also see a Run now button if you want to test this right now.
 
 You can see the actual Run Function in the [Cloud Run section](https://console.cloud.google.com/run) in the GCP 
-console. This also has an execution record, and you can see the logs to see if it all worked.  
+console. This also has an execution record, and you can [see the logs](viewing-logs.md) to see if it all worked.  
 Once this runs you will see the new profile activation on your Android APS display on your phone. 
 
   

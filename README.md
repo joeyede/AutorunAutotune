@@ -36,9 +36,9 @@ When you do please follow the above procedure.
  
 You can either run in an enviorment of your choice: 
 
-[Run Standalone](running-standalone.md)
+[Run Standalone](docs/running-standalone.md)
 
 or
 
-[Run on Google Cloud](running-on-gcp.md)
+[Run on Google Cloud](docs/running-on-gcp.md)
 
