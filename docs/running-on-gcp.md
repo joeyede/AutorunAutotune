@@ -33,6 +33,12 @@ Take a look inside the script to see what it does.
 Once it runs (it takes a while) you should have the docker image running as a Serverless Cloud Run endpoint, 
 and a timer function setup to trigger it every day at 2:05am.
 
+If you need to make changes to any of the files you will just need to rebuild the docker image and update the cloud function.
+To do that simply run:
+```
+gcloud builds submit --config cloudbuild.yaml .
+```
+
 You can see the scheduler in the [Cloud Scheduler section](https://console.cloud.google.com/cloudscheduler) in 
 the GCP console.  Here you can also see a Run now button if you want to test this right now.
 
