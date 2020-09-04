@@ -1,7 +1,7 @@
 # AutorunAutotune
 This is a Dockerfile + instructions to make it easier to run OpenAPS Autotune and allow automation.
 
-# Status: Currently this only has a single user use at your own risk!
+# Status: In testing. Only has a few users, use at your own risk!
 
 ## Caution and disclaimer
 By following these instructions you are using components provided by OpenAPS as a reference implementation.  Nobody can
