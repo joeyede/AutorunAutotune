@@ -4,13 +4,13 @@
 - You will need to know you nightscout URL and API secret. 
 - You will need to have setup a profile called "baseline" 
 - You will need Git installed to download this repository. 
-- You will need to have Docker installed  to build and run the Docker image.  See https://www.docker.com/ for more info.
+- You will need to have Docker installed in order to build and run the Docker image.  See https://www.docker.com/ for more info.
 
 ## Getting Started:
 - Create a directory you want to run this in. 
 - Change to that directory. 
 - Pull this repository from git
-- Change in to the newly created git clone.
+- Change into the newly created git clone.
 
 e.g. on Linux:
 ```shell script
@@ -87,7 +87,7 @@ Got response  is:[{"eventType":"Profile Switch","notes":"Applying autotune from 
 ```
 
 ## Automating this
-Use your automatoin tool of choice to run the command:
+Use your automation tool of choice to run the command:
 ```shell script
 $ docker run autot
 ```
