@@ -1,9 +1,9 @@
 # Running on GCP
 This section details how to set this up to run automatically on Google Cloud.
 This should be possible using the Free tier, so you shouldn't be charged, but I haven't fully tested this yet.
-Note you will need to set up billing, even if this dons't incur any charges. 
+Note you will need to set up billing, even if this doesn't incur any charges. 
 
-## Quickstart
+## QuickStart
 Create a new cloud project. Open the cloud Shell and make sure the new project is active:
 ```shell script
 $ gcloud config set project {Project-ID}
@@ -15,7 +15,7 @@ $ cd AutorunAutotune
 
 ```
 Now edit the Dockerfile as described in [Run Standalone](docs/running-standalone.md#update-docker-file)
-Additionally you need to edit last lines of Dockerfile.  Uncomment the last CMD and comment out the CMD before that.
+Additionally, you need to edit last lines of Dockerfile.  Uncomment the last CMD and comment out the CMD before that.
 should now look like this:
 ```dockerfile
 # To run from docker directly use:
@@ -45,7 +45,7 @@ Once this runs you will see the new profile activation on your Android APS displ
 The above assume some knowledge in GCP.  Here is a bit more detail: As the first step you need to setup a GCP project
 and billing account.  There are 100's of tutorials for this but the super short version: In a browser where you are 
 logged in to a Google account (you may want to create a new one to make sure this is all fresh) go to 
-https://console.cloud.google.com/ and setup a new project.  check what it's id is in the project pull
+https://console.cloud.google.com/ and setup a new project.  check what its ID is in the project pull
 down on top left. 
 
 On the top right next to search bar you should see an icon that looks like this: >_ "Activate Cloud Shell" this opens
