@@ -47,7 +47,7 @@ console. This also has an execution record, and you can [see the logs](viewing-l
 Once this runs you will see the new profile activation on your Android APS display on your phone. 
 
   
-##A bit more detail
+## A bit more detail
 The above assume some knowledge in GCP.  Here is a bit more detail: As the first step you need to setup a GCP project
 and billing account.  There are 100's of tutorials for this but the super short version: In a browser where you are 
 logged in to a Google account (you may want to create a new one to make sure this is all fresh) go to 
