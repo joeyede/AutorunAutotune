@@ -14,7 +14,7 @@ $ git clone https://github.com/joeyede/AutorunAutotune.git
 $ cd AutorunAutotune
 
 ```
-Now edit the Dockerfile as described in [Run Standalone](docs/running-standalone.md#update-docker-file)
+Now edit the Dockerfile as described in [Run Standalone](master/docs/running-standalone.md#update-docker-file)
 Additionally, you need to edit last lines of Dockerfile.  Uncomment the last CMD and comment out the CMD before that.
 should now look like this:
 ```dockerfile
