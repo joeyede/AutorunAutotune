@@ -14,7 +14,7 @@ echo "Running autotune"
 oref0-autotune --dir=/usr/src/autot/myopenaps --ns-host=$SITE_URL  --start-days-ago=$DAYS --categorize-uam-as-basal=$UAM_BASAL --tune-insulin-curves=$TUNE
 if [ $? -eq 0 ]
 then
-  echo "Autotune successfull"
+  echo "Autotune successful"
 else
   echo "ERROR: Autotune failed!" 1>&2
   exit 1 
@@ -24,7 +24,7 @@ echo "Uploading profile:" ./myopenaps/autotune/profile.json
 oref0-upload-profile ./myopenaps/autotune/profile.json $SITE_URL $API_SECRET
 if [ $? -eq 0 ]
 then
-  echo "Upload successfull"
+  echo "Upload successful"
 else
   echo "ERROR: upload failed!" 1>&2
   exit 1 
@@ -34,7 +34,7 @@ echo "triggering updated profile"
 python3 profile_trigger.py --site=$SITE_URL --api_key=$API_SECRET
 if [ $? -eq 0 ]
 then
-  echo "trigger successfull"
+  echo "trigger successful"
 else
   echo "ERROR: trigger failed!" 1>&2
   exit 1 
