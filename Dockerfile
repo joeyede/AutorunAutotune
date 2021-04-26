@@ -8,7 +8,7 @@ RUN apt-get -y install sudo
 ## Source of next set of commands reversed engneerind from:
 ## https://raw.githubusercontent.com/openaps/docs/master/scripts/quick-packages.sh
 
-RUN sudo apt-get install -y git python python-dev software-properties-common python-numpy python-pip nodejs-legacy watchdog strace tcpdump screen acpid vim locate jq lm-sensors bc
+RUN sudo apt-get install -y git python python-dev software-properties-common python-numpy python-pip nodejs libnode64 watchdog strace tcpdump screen acpid vim locate jq lm-sensors bc
 
 ## Set the locale
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y locales
@@ -33,10 +33,12 @@ RUN mkdir ./src
 RUN cd ./src && git clone -b dev git://github.com/openaps/oref0.git || (echo doing checkout && cd oref0 && git checkout dev && git pull)
 RUN cd ./src/oref0 && npm run global-install
 
-RUN echo "ERROR - You need to remove this line and edit the next lines with your personal API Secret and site URL" ; exit 1
+RUN echo "ERROR - You need to remove this line and edit the next lines with your personal API Secret and site URL; whether you want UAM counted as Basal; and whether to tune the insulin curve" ; exit 1
 # Personal stuff: replace with correct values
 ENV API_SECRET missing 
 ENV SITE_URL https://mysite.herokuapp.com
+ENV UAM_BASAL false
+ENV TUNE true
 # Set Your Time zone
 ENV TZ Europe/London  
 
