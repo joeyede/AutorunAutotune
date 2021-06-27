@@ -18,7 +18,8 @@ def trigger(site, api_key):
         site += '/'
 
     api_endpoint = site + "api/v1/treatments.json"
-    api_key_sh1=hashlib.sha1(bytes(api_key, 'utf-8')).hexdigest()
+#    api_key_sh1=hashlib.sha1(bytes(api_key, 'utf-8')).hexdigest()
+    api_key_sh1=api_key
 
     # datetime object containing current date and time
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -39,7 +40,7 @@ def trigger(site, api_key):
 
 
 def print_usage(apname):
-    print(apname + ' --site <nightscoute_URL> --api_key <api_key>') 
+    print(apname + ' --site <nightscoute_URL> --api_key <sha1 of api_key>') 
     print('e.g.:')
     print(apname + ' --site=\"https://mysite.herokuapp.com\" --api_key=\"mysecretekey\"')
 

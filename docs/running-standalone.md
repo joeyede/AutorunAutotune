@@ -29,8 +29,18 @@ You will now need to **modify** the Dockerfile.
  - Replace *"https://yousite.herokuapp.com"* with your nightscout URL.
  - Replace *"Europe/London"* with the correct timezone.  You can find yours here: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
+ - Open the file called "Dockerfile" in a text editor and find the section labeled "#Personal stuff"
+ - Find the line that starts "RUN echo "ERROR - You need to remove this line and edit the next lines..." and delete it
+ - Replace *"missing"* with your API Secret
+ - Replace *"https://yousite.herokuapp.com"* with your nightscout URL.  **be sure not to have a '/' at the end of the line'
+ - Replace *"Europe/London"* with the correct timezone.  You can find yours here: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+ - Set UAM_BASAL to "true" or "false" to indicate if you want all Unanounced Meals detected to count as basal see [autotune docs](https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/autotune.html) for more details on this. 
+ - Set TUNE to "true" or "false" to indicate if you want inslulin curves to be tuned. Again see [autotune docs](https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/autotune.html) for info. 
+
+
 This is the section you are looking for: 
 ```dockerfile
+RUN echo "ERROR - You need to remove this line and edit the next lines with your personal API Secret and site URL; whether you want UAM counted as Basal; and whether to tune the insulin curve" ; exit 1
 # Personal stuff:
 ENV API_SECRET missing
 ENV SITE_URL https://yousite.herokuapp.com
