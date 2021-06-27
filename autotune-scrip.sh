@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+API_SECRET=`echo -n ${API_SECRET}|sha1sum|cut -f1 -d '-'|cut -f1 -d ' '`
+
 echo "Getting profile"
 python3 get_profile.py --nightscout $SITE_URL  write --directory ./myopenaps/settings/ --name baseline
 if [ $? -eq 0 ]
@@ -11,7 +14,8 @@ else
 fi
 
 echo "Running autotune"
-oref0-autotune --dir=/usr/src/autot/myopenaps --ns-host=$SITE_URL  --start-days-ago=$DAYS --categorize-uam-as-basal=$UAM_BASAL --tune-insulin-curves=$TUNE
+echo oref0-autotune --dir=/usr/src/autot/myopenaps --ns-host=$SITE_URL  --start-days-ago=$DAYS --categorize-uam-as-basal=$UAM_BASAL --tune-insulin-curve=$TUNE
+oref0-autotune --dir=/usr/src/autot/myopenaps --ns-host=$SITE_URL  --start-days-ago=$DAYS --categorize-uam-as-basal=$UAM_BASAL --tune-insulin-curve=$TUNE
 if [ $? -eq 0 ]
 then
   echo "Autotune successful"
